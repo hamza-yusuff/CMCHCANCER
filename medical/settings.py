@@ -137,3 +137,11 @@ STATICFILES_DIRS=(
 )
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+
+#'default': {
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'CMCHcancer',
+        #'USER':'postgres',
+        #'PASSWORD':'PGhamza27$',
+        #'HOST':'localhost',
+        #'POST':'5432
