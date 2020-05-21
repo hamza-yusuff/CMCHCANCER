@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!w!s!%)10u=vqkdy896@!wu2_fmj9w52)x#f+g)r(cz!5-tl&v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['165.22.221.119']
 
@@ -80,21 +80,21 @@ WSGI_APPLICATION = 'medical.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CMCHcancer',
-        'USER':'postgres',
-        'PASSWORD':'PGhamza27$',
-        'HOST':'localhost',
-        'POST':'5432'
+#if DEBUG:
+    #DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'CMCHcancer',
+        #'USER':'postgres',
+        #'PASSWORD':'PGhamza27$',
+        #'HOST':'localhost',
+        #'POST':'5432'
 
 
-        }
-    }
-else:
-    DATABASES = {
+        #}
+    #}
+#else:
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myproject',
@@ -102,8 +102,8 @@ else:
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
-        }
     }
+}
 
 
 
