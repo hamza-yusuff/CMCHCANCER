@@ -3,7 +3,7 @@ from . models import Patient,Doctor,Staff,ward,Notice,roster
 
 
 class Patientserializer(serializers.ModelSerializer):
-    patient_image=serializers.ImageField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True)
+    patient_image=serializers.ImageField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,required=False)
     
     class Meta:
         model=Patient
