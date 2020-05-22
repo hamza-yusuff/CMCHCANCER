@@ -4,11 +4,7 @@ from . models import Patient,Doctor,Staff,ward,Notice,roster
 
 class Patientserializer(serializers.ModelSerializer):
     patient_image=serializers.ImageField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
-    historyfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
-    physicalexamfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
-    investigationfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
-    reportsfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
-    additionalfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
+    
     class Meta:
         model=Patient
         fields='__all__'
@@ -39,3 +35,9 @@ class Rosterserializer(serializers.ModelSerializer):
     class Meta:
         model=roster
         fields='__all__'
+
+#historyfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
+    #physicalexamfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
+    #investigationfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
+    #reportsfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
+    #additionalfiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,blank=True)
