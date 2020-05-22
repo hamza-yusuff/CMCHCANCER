@@ -44,19 +44,19 @@ class Patient(models.Model):
     Height=models.DecimalField(decimal_places=2,max_digits=10,blank=True,null=True)
     BMI=models.DecimalField(decimal_places=2,max_digits=10,blank=True,null=True)
     Concomitant=models.TextField(blank=True,null=True)
-    historyfiles=models.FileField(upload_to='patienthistorydoc/',blank=True,null=True)
+    #historyfiles=models.FileField(upload_to='patienthistorydoc/',blank=True,null=True)
 
     familyhistory=models.TextField(blank=True,null=True)
     familyhistoryofmalignancy=models.TextField(blank=True,null=True)
     personalhistory=models.TextField(blank=True,null=True)
     pasthistorydisease=models.TextField(blank=True,null=True)
     Drughistory=models.TextField(blank=True,null=True)
-    physicalexamfiles=models.FileField(upload_to='patientphysicalexamdoc/',blank=True,null=True)
+    #physicalexamfiles=models.FileField(upload_to='patientphysicalexamdoc/',blank=True,null=True)
     Physicalexamfindings=models.TextField(blank=True,null=True)
     Casesummary=models.TextField(blank=True,null=True)
     diagnosis=models.TextField(blank=True,null=True)
     Investigation=models.TextField(blank=True,null=True)
-    investigationfiles=models.FileField(upload_to='investigationfilesdoc/',blank=True,null=True)
+    #investigationfiles=models.FileField(upload_to='investigationfilesdoc/',blank=True,null=True)
     #all under investigation
     fnac=models.TextField(blank=True,null=True)
     histopathology=models.TextField(blank=True,null=True)
@@ -90,7 +90,7 @@ class Patient(models.Model):
     LDH=models.TextField(blank=True,null=True)
     SERUM_PROTEIN_ELECTROPHORESIS=models.TextField(blank=True,null=True)
     additionaltest=models.TextField(blank=True,null=True)
-    reportsfiles=models.FileField(upload_to='patientreportsdoc/',blank=True,null=True)
+    #reportsfiles=models.FileField(upload_to='patientreportsdoc/',blank=True,null=True)
     #outside Investigation
     stage=[
         ('1','I'),
@@ -129,7 +129,7 @@ class Patient(models.Model):
     new_adjuvant=models.TextField(blank=True,null=True)
     followup=models.TextField(blank=True,null=True)
     additionalinformation=models.TextField(blank=True,null=True)
-    additionalfiles=models.FileField(upload_to='patientadditionalfilesdoc/',blank=True,null=True)
+    #additionalfiles=models.FileField(upload_to='patientadditionalfilesdoc/',blank=True,null=True)
 
 
 class Doctor(models.Model):
