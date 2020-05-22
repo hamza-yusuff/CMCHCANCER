@@ -25,7 +25,7 @@ class Patient(models.Model):
     sex=models.CharField(max_length=20,blank=False,choices=gender,null=False)
     status=[
         ('Married','Married'),
-        ('Unmarrried','Unmarried'),
+        ('Unmarried','Unmarried'),
     ]
     maritial_status=models.CharField(max_length=20,blank=False,choices=status,null=False)
     occupation=models.TextField(blank=True,null=True)
