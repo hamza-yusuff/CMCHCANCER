@@ -10,7 +10,7 @@ class Patientserializer(serializers.ModelSerializer):
         fields='__all__'
 
 class Doctorserializer(serializers.ModelSerializer):
-    image=serializers.ImageField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True)
+    #image=serializers.ImageField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True)
     class Meta:
         model=Doctor
         fields=['id','name','image','sex','designation','number','email','address']
