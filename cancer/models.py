@@ -177,12 +177,12 @@ class Staff(models.Model):
     machine=models.CharField(max_length=100,choices=machine_room,blank=True,null=True)
 
 class Notice(models.Model):
-    title=models.CharField(max_length=200,null=True,blank=True)
+    #title=models.CharField(max_length=200,null=True,blank=True)
     notice=models.TextField(null=True,blank=True)
     noticefiles=models.FileField(upload_to='noticefilesdoc/',blank=True,null=True)
 
 class ward(models.Model):
-    created=models.DateField(default=date.today)
+    #created=models.DateField(default=date.today)
     patientid=models.CharField(max_length=10,null=True,blank=True)
     wardnum=models.IntegerField(null=False,blank=False)
     bednum=models.IntegerField(null=False,blank=False)
