@@ -31,6 +31,7 @@ class Wardserializer(serializers.ModelSerializer):
         fields='__all__'
 
 class Noticeserializer(serializers.ModelSerializer):
+    noticefiles=serializers.FileField(max_length=None,use_url=True,allow_null=True,allow_empty_file=True,required=False)
     class Meta:
         model=Notice
         fields='__all__'
