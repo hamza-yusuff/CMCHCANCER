@@ -188,7 +188,7 @@ class WardListView(ListAPIView):
     queryset=ward.objects.all()
     serializer_class=Wardserializer
     filter_backends=(SearchFilter,OrderingFilter)
-    search_fields=('name','wardnum','bednum')
+    search_fields=('firstname','lastname','wardnum','bednum')
 
 @api_view(['GET', ])
 def singleward(request,pk):

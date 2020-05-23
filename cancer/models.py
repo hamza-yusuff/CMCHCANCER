@@ -18,8 +18,8 @@ class Patient(models.Model):
     Emergency=models.IntegerField(blank=True,null=True)
     Age=models.IntegerField(blank=False,null=False)
     gender=[
-        ('Male','M'),
-        ('Female','F'),
+        ('Male','Male'),
+        ('Female','Female'),
         ('Other','Other'),
     ]
     sex=models.CharField(max_length=20,blank=False,choices=gender,null=False)
@@ -44,19 +44,19 @@ class Patient(models.Model):
     Height=models.DecimalField(decimal_places=2,max_digits=10,blank=True,null=True)
     BMI=models.DecimalField(decimal_places=2,max_digits=10,blank=True,null=True)
     Concomitant=models.TextField(blank=True,null=True)
-    #historyfiles=models.FileField(upload_to='patienthistorydoc/',blank=True,null=True)
+    historyfiles=models.FileField(upload_to='patienthistorydoc/',blank=True,null=True)
 
     familyhistory=models.TextField(blank=True,null=True)
     familyhistoryofmalignancy=models.TextField(blank=True,null=True)
     personalhistory=models.TextField(blank=True,null=True)
     pasthistorydisease=models.TextField(blank=True,null=True)
     Drughistory=models.TextField(blank=True,null=True)
-    #physicalexamfiles=models.FileField(upload_to='patientphysicalexamdoc/',blank=True,null=True)
+    physicalexamfiles=models.FileField(upload_to='patientphysicalexamdoc/',blank=True,null=True)
     Physicalexamfindings=models.TextField(blank=True,null=True)
     Casesummary=models.TextField(blank=True,null=True)
     diagnosis=models.TextField(blank=True,null=True)
     Investigation=models.TextField(blank=True,null=True)
-    #investigationfiles=models.FileField(upload_to='investigationfilesdoc/',blank=True,null=True)
+    investigationfiles=models.FileField(upload_to='investigationfilesdoc/',blank=True,null=True)
     #all under investigation
     fnac=models.TextField(blank=True,null=True)
     histopathology=models.TextField(blank=True,null=True)
@@ -90,7 +90,7 @@ class Patient(models.Model):
     LDH=models.TextField(blank=True,null=True)
     SERUM_PROTEIN_ELECTROPHORESIS=models.TextField(blank=True,null=True)
     additionaltest=models.TextField(blank=True,null=True)
-    #reportsfiles=models.FileField(upload_to='patientreportsdoc/',blank=True,null=True)
+    reportsfiles=models.FileField(upload_to='patientreportsdoc/',blank=True,null=True)
     #outside Investigation
     stage=[
         ('1','I'),
@@ -129,15 +129,15 @@ class Patient(models.Model):
     new_adjuvant=models.TextField(blank=True,null=True)
     followup=models.TextField(blank=True,null=True)
     additionalinformation=models.TextField(blank=True,null=True)
-    #additionalfiles=models.FileField(upload_to='patientadditionalfilesdoc/',blank=True,null=True)
+    additionalfiles=models.FileField(upload_to='patientadditionalfilesdoc/',blank=True,null=True)
 
 
 class Doctor(models.Model):
     name=models.CharField(max_length=150,blank=False,null=False)
     image=models.ImageField(upload_to='doctorimages/',blank=True,null=True)
     gender=[
-        ('Male','M'),
-        ('Female','F'),
+        ('Male','Male'),
+        ('Female','Female'),
         ('Other','Other'),
     ]
     sex=models.CharField(max_length=100,choices=gender,blank=True,null=True)
@@ -154,8 +154,8 @@ class Staff(models.Model):
     number=models.IntegerField(blank=True,null=True)
     address=models.TextField(blank=True,null=True)
     gender=[
-        ('Male','M'),
-        ('Female','F'),
+        ('Male','Male'),
+        ('Female','Female'),
         ('Other','Other'),
     ]
     sex=models.CharField(max_length=100,choices=gender,blank=True,null=True)
@@ -187,8 +187,8 @@ class ward(models.Model):
     lastname=models.CharField(max_length=100,null=True,blank=True)
     phone=models.IntegerField(null=True,blank=True)
     gender=[
-        ('Male','M'),
-        ('Female','F'),
+        ('Male','Male'),
+        ('Female','Female'),
         ('Other','Other'),
     ]
     sex=models.CharField(max_length=100,choices=gender,null=True,blank=True)
