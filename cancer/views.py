@@ -7,13 +7,15 @@ from rest_framework import status
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
+@csrf_exempt
 @api_view(['GET', ])
 def patientlist(request):
     patients=Patient.objects.all().order_by('-created')
     serializer= Patientserializer(patients,many=True)
     return Response(serializer.data)
-
+@csrf_exempt
 @api_view(['GET', ])
 def singlepatient(request,pk):
     try:
@@ -23,7 +25,7 @@ def singlepatient(request,pk):
     if request.method=='GET':
         serializer=Patientserializer(patient,many=False)
         return Response(serializer.data)
-
+@csrf_exempt
 @api_view(['PATCH', ])
 def patientupdate(request,pk):
     try:
@@ -39,7 +41,7 @@ def patientupdate(request,pk):
             return Response(data=data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+@csrf_exempt
 @api_view(['DELETE', ])
 def patientdelete(request,pk):
     try:
@@ -54,7 +56,7 @@ def patientdelete(request,pk):
         else:
             data['failure']='delete failed'
         return Response(data=data)
-
+@csrf_exempt
 @api_view(['POST' ])
 def patientcreate(request):
     if request.method=='POST':
@@ -71,7 +73,7 @@ class PatientListView(ListAPIView):
     pagination_class=PageNumberPagination
     filter_backends=(SearchFilter,OrderingFilter)
     search_fields=('fname','lname','Cancer_id','Age','registration','Contact')
-    
+@csrf_exempt    
 @api_view(['GET', ])
 def singledoctor(request,pk):
     try:
@@ -81,7 +83,7 @@ def singledoctor(request,pk):
     if request.method=='GET':
         serializer=Doctorserializer(doctor,many=False)
         return Response(serializer.data)
-
+@csrf_exempt
 @api_view(['PATCH', ])
 def doctorupdate(request,pk):
     try:
@@ -97,7 +99,7 @@ def doctorupdate(request,pk):
             return Response(data=data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+@csrf_exempt
 @api_view(['DELETE', ])
 def doctordelete(request,pk):
     try:
@@ -112,7 +114,7 @@ def doctordelete(request,pk):
         else:
             data['failure']='delete failed'
         return Response(data=data)
-
+@csrf_exempt
 @api_view(['POST' ])
 def doctorcreate(request):
     if request.method=='POST':
@@ -133,7 +135,7 @@ class StaffListView(ListAPIView):
     serializer_class=Staffserializer
     filter_backends=(SearchFilter,OrderingFilter)
     search_fields=('name','designation')
-
+@csrf_exempt
 @api_view(['GET', ])
 def singlestaff(request,pk):
     try:
@@ -143,7 +145,7 @@ def singlestaff(request,pk):
     if request.method=='GET':
         serializer=Staffserializer(staff,many=False)
         return Response(serializer.data)
-
+@csrf_exempt
 @api_view(['PATCH', ])
 def staffupdate(request,pk):
     try:
@@ -159,7 +161,7 @@ def staffupdate(request,pk):
             return Response(data=data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+@csrf_exempt
 @api_view(['DELETE', ])
 def staffdelete(request,pk):
     try:
@@ -174,7 +176,7 @@ def staffdelete(request,pk):
         else:
             data['failure']='delete failed'
         return Response(data=data)
-
+@csrf_exempt
 @api_view(['POST' ])
 def staffcreate(request):
     if request.method=='POST':
@@ -189,7 +191,7 @@ class WardListView(ListAPIView):
     serializer_class=Wardserializer
     filter_backends=(SearchFilter,OrderingFilter)
     search_fields=('firstname','lastname','wardnum','bednum')
-
+@csrf_exempt
 @api_view(['GET', ])
 def singleward(request,pk):
     try:
@@ -199,7 +201,7 @@ def singleward(request,pk):
     if request.method=='GET':
         serializer=Wardserializer(wardpatient,many=False)
         return Response(serializer.data)
-
+@csrf_exempt
 @api_view(['PATCH', ])
 def wardupdate(request,pk):
     try:
@@ -215,7 +217,7 @@ def wardupdate(request,pk):
             return Response(data=data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+@csrf_exempt
 @api_view(['DELETE', ])
 def warddelete(request,pk):
     try:
@@ -230,7 +232,7 @@ def warddelete(request,pk):
         else:
             data['failure']='delete failed'
         return Response(data=data)
-
+@csrf_exempt
 @api_view(['POST' ])
 def wardcreate(request):
     if request.method=='POST':
