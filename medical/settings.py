@@ -25,7 +25,7 @@ SECRET_KEY = '!w!s!%)10u=vqkdy896@!wu2_fmj9w52)x#f+g)r(cz!5-tl&v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['165.22.221.119']
+ALLOWED_HOSTS = ['165.22.221.119','www.cancercmch.xyz','cancercmch.xyz']
 
 
 # Application definition
