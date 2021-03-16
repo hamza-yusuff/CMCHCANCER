@@ -1,3 +1,4 @@
 # CMCHCANCER
-Api and Backend for Cancer CMCH intra department website, implemented using DJANGO and DJANGO REST FRAMEWORK, to build the the backend structure, along with the postgresql, and the 
+RESTful Api and Backend for Cancer CMCH intra department website
+Implemented using DJANGO and DJANGO REST FRAMEWORK, to build the the backend with postgresql, and the 
 REST API respectively
